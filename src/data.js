@@ -25,6 +25,24 @@ const videoData = [
     transport: 'Walking',
     creator: 'Wind Walk Travel Videos',
   },
+  {
+    id: 'yIMDgPKgN1w',
+    url: 'https://youtu.be/yIMDgPKgN1w',
+    creator: 'Rambalac',
+    title:
+      'Walking in rainy Arashiyama, Kyoto - Kameyama park and bamboo grove',
+    location: 'Arashiyama, Kyoto',
+    transport: 'Walking',
+  },
+  {
+    id: 'E2sSvVCRI4s',
+    url: 'https://youtu.be/E2sSvVCRI4s',
+    creator: 'Watched Walker',
+    title:
+      'Walking London’s West End in the Rain - Saturday Night City Ambience',
+    location: 'West End, London',
+    transport: 'Walking',
+  },
 ];
 
 const videoLocations = () => [...new Set(videoData.map((v) => v.location))];
