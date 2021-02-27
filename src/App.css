@@ -12,6 +12,14 @@ body {
   min-height: 100%;
 }
 
+.no-interact-layer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
 #video-selector {
   position: relative;
   float: right;
@@ -19,7 +27,7 @@ body {
   background: rgba(0, 0, 0, 0.75);
   color: #f1f1f1;
   width: 350px;
-  height: 500px;
+  min-height: 500px;
   padding: 20px;
   border-radius: 5px;
 }
@@ -32,7 +40,6 @@ body {
   border-radius: 5px;
 }
 
-.video-origin,
 a {
   color: lightsteelblue;
 }
@@ -41,3 +48,44 @@ a {
   font-size: 18px;
   color: #f1f1f1;
 }
+.refresh-icon {
+  position: relative;
+
+  top: 5px;
+  left: 5px;
+  font-size: 23px;
+  color: #f1f1f1;
+}
+
+/* Buttons styles start */
+button {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: #0069ed;
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+  background: #0053ba;
+}
+
+button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+button:active {
+  transform: scale(0.75);
+}
+/* Button styles end */
