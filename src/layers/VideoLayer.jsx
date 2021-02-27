@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
-import { SiYoutube, SiYoutubestudio } from 'react-icons/si';
+import { SiYoutube, SiYoutubestudio, SiGooglemaps } from 'react-icons/si';
+import { MdDirectionsBike } from 'react-icons/md';
 import { videoData } from '../data';
 
 const VideoLayer = () => {
@@ -12,9 +13,11 @@ const VideoLayer = () => {
 
       <div id="video-selector">
         <div className="video-meta video-title">{currentVideo.title}</div>
-        <div className="video-meta video-location">{currentVideo.location}</div>
+        <div className="video-meta video-location">
+          <SiGooglemaps className="icons" /> {currentVideo.location}
+        </div>
         <div className="video-meta video-transport">
-          {currentVideo.transport}
+          <MdDirectionsBike className="icons" /> {currentVideo.transport}
         </div>
         <div className="video-meta video-origin">
           <SiYoutube className="icons" />{' '}
