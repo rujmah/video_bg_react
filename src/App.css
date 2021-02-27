@@ -3,3 +3,40 @@
 body {
   font-family: Karla, sans-serif;
 }
+
+#video-layer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#video-selector {
+  position: relative;
+  float: right;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  color: #f1f1f1;
+  width: 350px;
+  height: 500px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.video-meta {
+  font-size: 22px;
+  background: rgba(75, 73, 73, 0.75);
+  margin-bottom: 15px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.video-origin,
+a {
+  color: lightsteelblue;
+}
+
+.icons {
+  font-size: 18px;
+}
