@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
 
-import { FaCarSide, FaWalking } from 'react-icons/fa';
 import { MdRefresh, MdTitle } from 'react-icons/md';
 import {
   SiYoutube,
