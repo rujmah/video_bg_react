@@ -32,8 +32,16 @@ body {
   border-radius: 5px;
 }
 
-.video-meta {
+.video-info {
   font-size: 22px;
+  background: rgba(75, 73, 73, 0.75);
+  margin-bottom: 15px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.video-meta {
+  font-size: 16px;
   background: rgba(75, 73, 73, 0.75);
   margin-bottom: 15px;
   padding: 5px;
@@ -44,35 +52,26 @@ a {
   color: lightsteelblue;
 }
 
-.icons {
-  font-size: 18px;
+.icon-info {
+  font-size: 20px;
   color: #f1f1f1;
 }
-.refresh-icon {
-  position: relative;
 
-  top: 5px;
-  left: 5px;
-  font-size: 23px;
+.icon-meta {
+  font-size: 14px;
   color: #f1f1f1;
 }
 
 /* Buttons styles start */
+
 button {
-  display: inline-block;
-  border: none;
+  border: 0;
+  border-radius: 0.25rem;
+  background: #1e88e5;
+  color: aliceblue;
+  font-family: system-ui, sans-serif;
+  font-size: 1.2rem;
   padding: 1rem 2rem;
-  margin: 0;
-  text-decoration: none;
-  background: #0069ed;
-  color: #ffffff;
-  font-size: 1rem;
-  line-height: 1;
-  cursor: pointer;
-  text-align: center;
-  transition: background 250ms ease-in-out, transform 150ms ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
 }
 
 button:hover,
@@ -81,7 +80,7 @@ button:focus {
 }
 
 button:focus {
-  outline: 1px solid #fff;
+  /* outline: 1px solid #fff; */
   outline-offset: -4px;
 }
 

@@ -46,16 +46,26 @@ const videoData = [
 ];
 
 const videoLocations = () => [...new Set(videoData.map((v) => v.location))];
+
 const videosByTransport = (transport) =>
   videoData.filter((v) => v.transport === transport);
+
 const videoByTransportAndLocation = (p) =>
   videoData.find(
     (v) => v.transport === p.transport && v.location === p.location
   );
 
+const shuffleVideos = (array) => {
+  for (let i = array.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+};
+
 export {
-  videoLocations,
   videoData,
+  videoLocations,
   videosByTransport,
   videoByTransportAndLocation,
+  shuffleVideos,
 };

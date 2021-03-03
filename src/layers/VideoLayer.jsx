@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
+import { Helmet } from 'react-helmet';
 
 import { MdRefresh, MdTitle } from 'react-icons/md';
 import {
@@ -8,40 +9,39 @@ import {
   SiGithub,
   SiGooglemaps,
 } from 'react-icons/si';
-import { videoData } from '../data';
+
+import { videoData, shuffleVideos } from '../data';
 
 const VideoLayer = () => {
-  const [currentIdx, setCurrentIdx] = useState(0);
-  const [currentVideo, setCurrentVideo] = useState(videoData[currentIdx]);
-  const [playedIdx, setPlayedIdx] = useState([currentIdx]);
+  const videoArray = videoData;
+  shuffleVideos(videoArray);
+  const [videoDataArray, setVideoDataArray] = useState(videoArray);
+  const [currentVideo, setCurrentVideo] = useState(videoDataArray.shift());
 
   const handleRandom = () => {
-    let rand = currentIdx;
-    if (playedIdx.length >= videoData.length) setPlayedIdx([rand]);
-    let c = 0;
-    while (playedIdx.includes(rand)) {
-      rand = Math.floor(Math.random() * videoData.length);
-      c += 1;
-      console.log(`count ${c}`);
-      if (c === playedIdx.length) {
-        setPlayedIdx([]);
-        break;
-      }
+    setCurrentVideo(videoDataArray.shift());
+    if (videoDataArray.length === 0) {
+      shuffleVideos(videoArray);
+      setVideoDataArray(videoArray);
     }
-    console.log(rand);
-    setCurrentVideo(videoData[rand]);
-    setCurrentIdx(rand);
-    setPlayedIdx([...playedIdx, rand]);
+    console.log(currentVideo);
+    console.log(videoDataArray);
   };
 
+  console.log(currentVideo);
+  console.log(videoDataArray);
   return (
     <div className="container">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Video Outandabout - {currentVideo.location}</title>
+      </Helmet>
       <ReactPlayer
         id="video-layer"
         playing
         config={{
           youtube: {
-            playerVars: { mute: 1, autoplay: 1 },
+            playerVars: { mute: 1, autoplay: 1, start: 30 },
           },
         }}
         url={currentVideo.url}
@@ -56,30 +56,31 @@ const VideoLayer = () => {
             <SiGithub className="icons" />
           </a>
         </h1>
-        <div className="video-meta video-title">
-          <MdTitle className="icons" /> {currentVideo.title}
+        <div className="video-info video-title">
+          <MdTitle className="icon-info" /> {currentVideo.title}
         </div>
-        <div className="video-meta video-location">
-          <SiGooglemaps className="icons" /> {currentVideo.location}
+        <div className="video-info video-location">
+          <SiGooglemaps className="icon-info" /> {currentVideo.location}
         </div>
 
         <hr />
         <h3>Video Meta</h3>
         <div className="video-meta video-origin">
-          <SiYoutube className="icons" />{' '}
+          <SiYoutube className="icon-meta" />{' '}
           <a href={currentVideo.url}>Original Video</a>
         </div>
         <div className="video-meta video-creator">
-          <SiYoutubestudio className="icons" /> {currentVideo.creator}
+          <SiYoutubestudio className="icon-meta" /> {currentVideo.creator}
         </div>
 
         <div className="video-meta video-random">
+          <MdRefresh className="icons refresh-icon" />{' '}
           <button
             onClick={() => handleRandom()}
             type="button"
             className="select-random"
           >
-            <MdRefresh className="icons refresh-icon" /> Select Random Walkabout
+            Select Random Walkabout
           </button>
         </div>
       </div>
