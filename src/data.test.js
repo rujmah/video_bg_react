@@ -40,9 +40,10 @@ describe('videoDataRandom', () => {
   test('should return randomised list of videoData', () => {
     const videosArray = videoData;
 
-    expect(videosArray[0].id).toEqual('u68EWmtKZw0');
+    const ids = videosArray.map((v) => v.id);
+    expect(videosArray.length).toEqual(5);
     shuffleVideos(videosArray);
     expect(videosArray.length).toEqual(5);
-    expect(videosArray[0].id).not.toEqual('u68EWmtKZw0');
+    expect(videosArray.map((v) => v.id)).not.toEqual(ids);
   });
 });

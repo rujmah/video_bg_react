@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 import { Helmet } from 'react-helmet';
 
@@ -15,21 +15,15 @@ import { videoData, shuffleVideos } from '../data';
 const VideoLayer = () => {
   const videoArray = videoData;
   shuffleVideos(videoArray);
-  const [videoDataArray, setVideoDataArray] = useState(videoArray);
-  const [currentVideo, setCurrentVideo] = useState(videoDataArray.shift());
+  const [currentVideo, setCurrentVideo] = useState(videoArray[0]);
 
-  const handleRandom = () => {
-    setCurrentVideo(videoDataArray.shift());
-    if (videoDataArray.length === 0) {
-      shuffleVideos(videoArray);
-      setVideoDataArray(videoArray);
-    }
-    console.log(currentVideo);
-    console.log(videoDataArray);
-  };
+  const [counter, setCounter] = useState(0);
 
-  console.log(currentVideo);
-  console.log(videoDataArray);
+  useEffect(() => {
+    setCurrentVideo(videoArray[counter]);
+    if (counter >= 4) setCounter(0);
+  }, [counter, videoArray]);
+
   return (
     <div className="container">
       <Helmet>
@@ -76,7 +70,7 @@ const VideoLayer = () => {
         <div className="video-meta video-random">
           <MdRefresh className="icons refresh-icon" />{' '}
           <button
-            onClick={() => handleRandom()}
+            onClick={() => setCounter(counter + 1)}
             type="button"
             className="select-random"
           >
