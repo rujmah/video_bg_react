@@ -1,5 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
 
+@media (min-width: 576px) {
+  :root {
+    --size-divisor: 2;
+  }
+}
+@media (min-width: 768px) {
+  :root {
+    --size-divisor: 1.5;
+  }
+}
+@media (min-width: 992px) {
+  :root {
+    --size-divisor: 1;
+  }
+}
+@media (min-width: 1200px) {
+  :root {
+    --size-divisor: 0.67;
+  }
+}
+
 body {
   font-family: Karla, sans-serif;
 }
@@ -26,8 +47,8 @@ body {
   bottom: 0;
   background: rgba(0, 0, 0, 0.75);
   color: #f1f1f1;
-  width: 350px;
-  min-height: 500px;
+  width: calc(350px / var(--size-divisor));
+  min-height: calc(500px / var(--size-divisor));
   padding: 20px;
   border-radius: 5px;
 }

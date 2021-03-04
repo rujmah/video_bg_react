@@ -8,6 +8,8 @@ Inspired by a number of walkabout/drive-around apps here is my attempt at the ba
 - [x] Muted, autoplay
 - [x] Links to the original YouTube video
 - [x] No mouseover interaction on video
+- [x] Mobile friendly
+- [ ] Auto-hide menu
 - [ ] Interactive overlays [just a _random_ button at the moment]
 - [ ] Walk/Drive options [in development, only walks at present]
 
