@@ -50,25 +50,39 @@ const VideoLayer = () => {
             <SiGithub className="icons" />
           </a>
         </h1>
+
         <div className="video-info video-title">
-          <MdTitle className="icon-info" /> {currentVideo.title}
+          <div className="video-icon-container">
+            <MdTitle className="icon-info" />
+          </div>
+          <div className="video-text">{currentVideo.title}</div>
         </div>
         <div className="video-info video-location">
-          <SiGooglemaps className="icon-info" /> {currentVideo.location}
+          <div className="video-icon-container">
+            <SiGooglemaps className="icon-info" />
+          </div>
+          {currentVideo.location}
         </div>
-
-        <hr />
-        <h3>Video Meta</h3>
         <div className="video-meta video-origin">
-          <SiYoutube className="icon-meta" />{' '}
-          <a href={currentVideo.url}>Original Video</a>
+          <div className="video-icon-container">
+            <SiYoutube className="icon-meta" />{' '}
+          </div>
+          <div className="video-text">
+            <a href={currentVideo.url}>Original Video</a>
+          </div>
         </div>
         <div className="video-meta video-creator">
-          <SiYoutubestudio className="icon-meta" /> {currentVideo.creator}
+          <div className="video-icon-container">
+            <SiYoutubestudio className="icon-meta" />
+          </div>
+          <div className="video-text">{currentVideo.creator}</div>
         </div>
 
         <div className="video-meta video-random">
-          <MdRefresh className="icons refresh-icon" />{' '}
+          <div className="video-icon-container">
+            <MdRefresh className="icons refresh-icon" />{' '}
+          </div>
+
           <button
             onClick={() => setCounter(counter + 1)}
             type="button"
