@@ -2,6 +2,8 @@
 
 Inspired by a number of walkabout/drive-around apps here is my attempt at the basics.
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Frujmah%2Fvideo_bg_react)
+
 ## Key features
 
 - [x] Full screen video
@@ -9,7 +11,7 @@ Inspired by a number of walkabout/drive-around apps here is my attempt at the ba
 - [x] Links to the original YouTube video
 - [x] No mouseover interaction on video
 - [x] Mobile friendly
-- [ ] Auto-hide menu
+- [x] Auto-hide menu
 - [ ] Interactive overlays [just a _random_ button at the moment]
 - [ ] Walk/Drive options [in development, only walks at present]
 

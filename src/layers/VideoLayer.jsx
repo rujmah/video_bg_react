@@ -9,7 +9,6 @@ const VideoLayer = () => {
   const videoArray = videoData;
   shuffleVideos(videoArray);
   const [currentVideo, setCurrentVideo] = useState(videoArray[0]);
-
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
@@ -21,7 +20,7 @@ const VideoLayer = () => {
     <div className="container">
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Video Outandabout - {currentVideo.location}</title>
+        <title>🎥🚶‍♂️🌴 Outandabout - {currentVideo.location}</title>
       </Helmet>
       <ReactPlayer
         id="video-layer"

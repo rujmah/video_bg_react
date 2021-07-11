@@ -52,14 +52,13 @@ body {
   min-height: calc(500px / var(--size-divisor));
   padding: 20px;
   border-radius: 5px;
-  /* partial hide */
-  transform: translateX(520px);
-  transition: transform 250ms ease-in-out;
+
+  opacity: 0.25;
+  transition: opacity 1s ease-in-out;
 }
 
 #video-selector:hover {
-  /* reveal */
-  transform: translateX(0);
+  opacity: 1;
 }
 
 .video-icon-container {
